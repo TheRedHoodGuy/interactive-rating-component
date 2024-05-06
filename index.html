@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>trhg - Interactive Rating Component | Frontend Mentor Challenge</title>
+        <link rel="icon" href="assets/images/favicon-32x32.png">
+
+        <!--Meta's-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="TheRedHoodGuy | Okpalannajiaku Xavier">
+        <meta name="description" content="Frontend Mentor Challenge Attempt - Three">
+        <!--Metas's-->
+
+        <!--Google Fonts and styles-->
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!--Google Fonts-->
+
+        <!--Scripts-->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    colors: {
+                        white: '#FFFFFF',
+                        orange: '#FB7413',
+                        light_grey: '#959EAC', //Text
+                        medium_grey: '#7C8798',
+                        dark_blue: '#252D37',
+                        very_dark_blue: '#121417'
+                    },
+                    fontFamily: {
+                        main: ['Overpass', 'sans-serif']
+                    },
+                    extend: {
+                        // -- Shii goes here -- //
+                    }
+                },
+            }
+        </script>
+        <!--Scripts-->
+    </head>
+    <body class="font-main text-light_grey text-[15px] font-normal d bg-very_dark_blue h-screen justify-center items-center flex">
+        <div class="relative flex justify-center m-5 max-w-[300px] h-screen mx-auto items-center">
+            <div class="h-fit bg-dark_blue rounded-xl p-5">
+                <div class="relative flex justify-center items-center mb-5 p-5 rounded-full bg-medium_grey w-fit bg-opacity-10">
+                    <img class="absolute w-4" src="assets/images/icon-star.svg" alt="star!">
+                </div>
+    
+                <div>
+                    <h1 class="mb-3 text-xl text-white tracking-wide font-semibold">How did we do?</h1>
+                    <span>Please let us know how we did with your support requests. All feedback is appreciated to help us improve our offering!</span>
+                </div>
+    
+                <!--Rating-->
+                <ul class="flex w-full justify-between mb-5 mt-5">
+                    <li><button class="relative p-5 flex justify-center items-center rounded-full bg-medium_grey bg-opacity-10 hover:bg-orange hover:bg-opacity-100 hover:text-white duration-300 rt" onclick="selectedValue('1')"><span class="absolute top-[10px]">1</span></button></li>
+                    <li><button class="relative p-5 flex justify-center items-center rounded-full bg-medium_grey bg-opacity-10 hover:bg-orange hover:bg-opacity-100 hover:text-white duration-300 rt" onclick="selectedValue('2')"><span class="absolute top-[10px]">2</span></button></li>
+                    <li><button class="relative p-5 flex justify-center items-center rounded-full bg-medium_grey bg-opacity-10 hover:bg-orange hover:bg-opacity-100 hover:text-white duration-300 rt" onclick="selectedValue('3')"><span class="absolute top-[10px]">3</span></button></li>
+                    <li><button class="relative p-5 flex justify-center items-center rounded-full bg-medium_grey bg-opacity-10 hover:bg-orange hover:bg-opacity-100 hover:text-white duration-300 rt" onclick="selectedValue('4')"><span class="absolute top-[10px]">4</span></button></li>
+                    <li><button class="relative p-5 flex justify-center items-center rounded-full bg-medium_grey bg-opacity-10 hover:bg-orange hover:bg-opacity-100 hover:text-white duration-300 rt" onclick="selectedValue('5')"><span class="absolute top-[10px]">5</span></button></li>
+                </ul>
+                <!--Rating-->
+    
+                <button type="button" id="subbtn" class="w-full p-2 bg-orange text-white rounded-full tracking-widest uppercase font-medium hover:text-orange hover:bg-white duration-300">submit</button>
+            </div>
+        </div>
+
+        <!--Modal Success-->
+        <section id="md" class="duration-500 absolute justify-center items-center bg-very_dark_blue h-screen w-screen">
+            <div id="close" class="cursor-pointer absolute top-0 right-0 p-3 m-5 rounded-full bg-orange text-white flex justify-center items-center">
+                <span class="absolute">x</span>
+            </div>
+            <div class="m-5 max-w-[320px] h-fit bg-dark_blue rounded-xl p-5 flex justify-center items-center flex-col">
+                <div class="w-full flex justify-center mb-5 mt-5">
+                    <img class="w-32" src="assets/images/illustration-thank-you.svg" alt="thanks">
+                </div>
+    
+                <div class="flex justify-center items-center py-1 px-4 mb-5 bg-medium_grey bg-opacity-15 rounded-full">
+                    <span class="text-orange">You selected <span id="selected"></span> out of 5</span>
+                </div>
+    
+                <div class="flex flex-col justify-center items-center w-full">
+                    <span class="mb-3 text-xl text-white tracking-wide font-semibold">Thank you!</span>
+                    <span class="text-center">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</span>
+                </div>
+            </div>
+        </section>
+        <!--Modal Success-->
+
+        <script src="index.js"></script>
+    </body>
+</html>
